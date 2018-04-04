@@ -132,6 +132,8 @@ extern "C"
     char sb_buf[RTMP_BUFFER_CACHE_SIZE];	/* data read from socket */
     int sb_timedout;
     void *sb_ssl;
+    int (*sb_interrupt_callback)(void*);
+    void *sb_context;
   } RTMPSockBuf;
 
   void RTMPPacket_Reset(RTMPPacket *p);
